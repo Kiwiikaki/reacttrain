@@ -18,14 +18,30 @@
         </script>
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <script type="text/babel">
-            <header id="root">
-            </header>
-            function Header() 
+            function Banner() 
             {
-                return (<h1>La maison jungle</h1>)
+                return <h1>La maison jungle</h1>
             }
 
-            ReactDOM.render(<Header />, document.getElementById("root"))
+
+            function Cart() 
+            {
+                var monsteraPrice = 18;
+                var lierrePrice = 11;
+                var bouquetPrice = 16;
+  
+                return (
+                <div>
+                    <h2>Panier</h2>
+                        <ul>
+                            <li>Monstera : {monsteraPrice}€</li>
+                            <li>Lierre : {lierrePrice}€</li>
+                            <li>Bouquet de fleur : {bouquetPrice}€</li>
+                        </ul>
+                        Total : {monsteraPrice + lierrePrice + bouquetPrice}€
+                </div>)
+            }
+            ReactDOM.render(<div><Banner /><Cart /></div>, document.getElementById('root'))
         </script>
     </body>
 </html>
